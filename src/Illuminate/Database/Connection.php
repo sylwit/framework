@@ -290,13 +290,13 @@ class Connection implements ConnectionInterface
      *
      * @param  string  $query
      * @param  array   $bindings
-     * @return mixed
+     * @return mixed|null
      */
     public function selectOne($query, $bindings = [])
     {
         $records = $this->select($query, $bindings);
 
-        return reset($records) ?: null;
+        return array_shift($records);
     }
 
     /**
