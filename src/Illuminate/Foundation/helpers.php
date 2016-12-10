@@ -455,7 +455,7 @@ if (! function_exists('env')) {
                 return;
         }
 
-        return trim($value, '"');
+        return $value;
     }
 }
 
